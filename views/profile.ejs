@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Login</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "email": <%= user.email %>,
+        "name": <%= user.name %>,
+        "family_name": <%= user.family_name %>,
+        "image": {
+          "@type": "ImageObject",
+          "contentUrl": <%= user.picture %>,
+        },
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container container2">
+      <img class="picture-heading" src="<%= user.picture %>%>" alt="" />
+      <h1 class="page-heading">Name: <%= user.given_name %>%></h1>
+      <h1 class="page-heading">Surname: <%= user.family_name %>%></h1>
+      <h1 class="page-heading">Full name: <%= user.name %>%></h1>
+      <h1 class="page-heading">E-mail: <%= user.email %>%></h1>
+      <a href="http://localhost:5557/datatable"
+        ><button id="my-button" class="button">REFRESH DATABASE</button></a
+      >
+      <a href="http://localhost:5557/logout"
+        ><button id="my-button" class="button">LOGOUT</button></a
+      >
+    </div>
+  </body>
+</html>
